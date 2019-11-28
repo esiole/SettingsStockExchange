@@ -30,7 +30,7 @@ import {PartnerService} from '../services/partner.service';
       </button>
       <app-partner-modale *ngIf="isAddPartner" (newPartner)="newPartnerEvent($event)" (closeModal)="isAddPartner=false">
       </app-partner-modale>
-      <app-change-partner-modale *ngIf="isChangePartner" (changePartner)="changePartnerEvent($event)" (closeModal)="isChangePartner=false" [name]="nameChange" [money]="money"></app-change-partner-modale>
+      <app-change-partner-modale *ngIf="isChangePartner" (newPartner)="changePartnerEvent($event)" (closeModal)="isChangePartner=false" [name]="nameChange" [money]="money"></app-change-partner-modale>
       <app-is-delete *ngIf="isDelete" (okay)="this.partnerService.deleteData(deleteValue); isDelete=false;" (back)="isDelete=false">
           этого участника
       </app-is-delete>

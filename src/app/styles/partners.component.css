@@ -4,6 +4,30 @@ table {
 }
 
 .modul {
-  width: 20%;
-  height: 33%;
+  width: 28%;
+  height: 28%;
+  min-width: 400px;
+  min-height: 190px;
+}
+
+.modul>button {
+  width: 120px;
+  height: 50px;
+}
+
+.modul>input {
+  min-width: 300px;
+}
+
+.badValue {
+  border: 2px solid red;
+  color: red;
+}
+
+.badValue::-webkit-input-placeholder {
+  color: red;
+}
+
+.badValue::-moz-placeholder {
+  color: red;
 }
