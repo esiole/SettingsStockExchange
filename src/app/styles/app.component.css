@@ -1,0 +1,14 @@
+h1 {
+  background: khaki;
+}
+
+#startButton {
+  margin-top: 15%;
+}
+
+p {
+  text-align: center;
+  font-size: x-large;
+  background: indigo;
+  color: white;
+}
