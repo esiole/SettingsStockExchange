@@ -17,19 +17,6 @@ import {PartnerModaleComponent} from './partner.modale.component';
 })
 
 export class ChangePartnerModaleComponent extends PartnerModaleComponent {
-  // @Output() changePartner = new EventEmitter<object>();
-  // @Output() closeModal = new EventEmitter();
   @Input() name: string;
   @Input() money: number;
-  /* add(name: string, money: number): void {
-    if (name === undefined || money === undefined || name === '' || money === null) {
-      window.alert('Введены не все данные!');
-      return;
-    }
-    if (money < 0) {
-      window.alert('Запас денежных средств не может быть отрицательным!');
-      return;
-    }
-    this.changePartner.emit({name, money});
-  } */
 }
