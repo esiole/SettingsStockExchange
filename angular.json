@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/WEBlab5",
+            "outputPath": "dist/settings_stock_exchange",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "WEBlab5:build"
+            "browserTarget": "settings_stock_exchange:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "WEBlab5:build:production"
+              "browserTarget": "settings_stock_exchange:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "WEBlab5:build"
+            "browserTarget": "settings_stock_exchange:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "WEBlab5:serve"
+            "devServerTarget": "settings_stock_exchange:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "WEBlab5:serve:production"
+              "devServerTarget": "settings_stock_exchange:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "WEBlab5"
+  "defaultProject": "settings_stock_exchange"
 }
