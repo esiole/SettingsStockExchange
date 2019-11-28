@@ -5,8 +5,8 @@ import {Component, EventEmitter, Output} from '@angular/core';
   template: `
       <div class="shadow">
           <div class="modul"><p></p>
-              <input type="text" [placeholder]="placeholderName" [(ngModel)]="name" [class.badValue]="isBadName" (focus)="focusName()"><p></p>
-              <input type="number" min="0" step="1" [placeholder]="placeholderMoney" [(ngModel)]="money" [class.badValue]="isBadMoney" (focus)="focusMoney()"><p></p>
+              <input type="text" [placeholder]="placeholderName" [(ngModel)]="name" [class.badValue]="isBadName" (focus)="focusName()" (keydown.enter)="add(name, money)"><p></p>
+              <input type="number" min="0" step="1" [placeholder]="placeholderMoney" [(ngModel)]="money" [class.badValue]="isBadMoney" (focus)="focusMoney()" (keydown.enter)="add(name, money)"><p></p>
               <button (click)="add(name, money)" class="w3-btn w3-indigo w3-hover-khaki w3-round-xxlarge w3-border">Добавить</button>
               <button (click)="this.closeModal.emit()" class="w3-btn w3-indigo w3-hover-khaki w3-round-xxlarge w3-border w3-margin-left">Назад</button>
           </div>
