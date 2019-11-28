@@ -31,7 +31,7 @@ import {Paper} from '../classes/Paper';
               </td>
           </tr>
       </table>
-      <button (click)="add()" class="w3-btn w3-indigo w3-hover-khaki w3-margin-top w3-margin-right w3-xlarge w3-round-xxlarge w3-border">
+      <button (click)="add()" class="w3-btn w3-indigo w3-hover-khaki w3-margin-top w3-margin-right w3-xlarge w3-round-xxlarge w3-border systemButton">
           Добавить
       </button>
       <app-paper-modale *ngIf="isAddPaper" (newPaper)="newPaperEvent($event)" (closeModal)="this.isAddPaper=false"></app-paper-modale>

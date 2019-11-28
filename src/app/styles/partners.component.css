@@ -18,16 +18,3 @@ table {
 .modul>input {
   min-width: 300px;
 }
-
-.badValue {
-  border: 2px solid red;
-  color: red;
-}
-
-.badValue::-webkit-input-placeholder {
-  color: red;
-}
-
-.badValue::-moz-placeholder {
-  color: red;
-}
