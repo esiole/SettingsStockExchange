@@ -12,7 +12,7 @@ import {Paper} from '../classes/Paper';
               <td><b>Правило изменения</b></td>
               <td><b>Максимальное значение для изменения</b></td>
               <td><b>Количество</b></td>
-              <td><b>Начальная стоимость одной</b></td>
+              <td><b>Начальная стоимость одной акции</b></td>
               <td><b>Функции</b></td>
           </tr>
           <tr *ngFor="let element of papers" class="w3-hover-khaki">

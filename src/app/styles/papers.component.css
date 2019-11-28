@@ -3,7 +3,23 @@ table {
   margin-left: 10%;
 }
 
+td {
+  width: 16.66%;
+}
+
 .modul {
-  width: 20%;
-  height: 55%;
+  width: 24%;
+  height: 47%;
+  min-width: 385px;
+  min-height: 355px;
+}
+
+.modul>button {
+  width: 120px;
+  height: 50px;
+}
+
+.modul>input, .modul>select {
+  min-width: 300px;
+  min-height: 30px;
 }

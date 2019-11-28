@@ -67,7 +67,7 @@ export class PartnersComponent implements OnInit {
   nameChange: string;
   money: number;
   changePartner(event): void {
-    this.nameChange = event.closest('tr').firstChild.innerHTML;
+    this.nameChange = event.closest('tr').children[0].innerHTML;
     this.money = event.closest('tr').children[1].innerHTML;
     this.isChangePartner = true;
     this.changePartnerName = event.closest('tr').firstChild.innerHTML;
