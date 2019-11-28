@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('./app/styles/font-awesome.css');
+@import url('./app/styles/w3.css');
+
+body {
+  background: url("./app/images/background.jpg");
+  font-size: large;
+  text-align: center;
+}
+
+caption {
+  background: khaki;
+  font-size: xx-large;
+}
+
+button, input {
+  outline: none;
+}
+
+.shadow {
+  background: rgba(128, 128, 128, .8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.modul {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: url("./app/images/background.jpg");
+  border-radius: 40px;
+  border: 3px solid white;
+}
