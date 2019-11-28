@@ -1,11 +1,13 @@
 .delete {
   width: 20%;
   height: 25%;
-  color: white;
 }
 
 .info {
   width: 20%;
   height: 21%;
-  color: white;
+}
+
+button {
+  width: 80px;
 }

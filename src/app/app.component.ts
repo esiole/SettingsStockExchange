@@ -11,19 +11,19 @@ import {SettingsComponent} from './components/settings.component';
       <button (click)="startSetting()" *ngIf="isStartButton" class="w3-btn w3-round-large w3-jumbo w3-indigo w3-hover-khaki w3-border" id="startButton"><b>Начать настройку</b></button>
       <div *ngIf="isFirstPage">
           <app-partners></app-partners>
-          <button (click)="toSecondPage()" class="w3-btn w3-indigo w3-hover-khaki w3-round-xxlarge w3-xlarge w3-margin-top w3-border">
+          <button (click)="toSecondPage()" class="w3-btn w3-indigo w3-hover-khaki w3-round-xxlarge w3-xlarge w3-margin-top w3-border systemButton">
               Продолжить
           </button>
       </div>
       <div *ngIf="isSecondPage">
           <app-papers></app-papers>
-          <button (click)="toThirdPage()" class="w3-btn w3-indigo w3-hover-khaki w3-round-xxlarge w3-xlarge w3-margin-top w3-border">
+          <button (click)="toThirdPage()" class="w3-btn w3-indigo w3-hover-khaki w3-round-xxlarge w3-xlarge w3-margin-top w3-border systemButton">
               Продолжить
           </button>
       </div>
       <div *ngIf="isThirdPage">
           <app-settings></app-settings>
-          <button (click)="toEnd()" class="w3-btn w3-indigo w3-hover-khaki w3-round-xxlarge w3-xlarge w3-margin-top w3-border">
+          <button (click)="toEnd()" class="w3-btn w3-indigo w3-hover-khaki w3-round-xxlarge w3-xlarge w3-margin-top w3-border systemButton">
               Завершить
           </button>
       </div>

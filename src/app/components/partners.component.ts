@@ -25,7 +25,7 @@ import {PartnerService} from '../services/partner.service';
               </td>
           </tr>
       </table>
-      <button (click)="add()" class="w3-btn w3-indigo w3-hover-khaki w3-margin-top w3-margin-right w3-xlarge w3-round-xxlarge w3-border">
+      <button (click)="add()" class="w3-btn w3-indigo w3-hover-khaki w3-margin-top w3-margin-right w3-xlarge w3-round-xxlarge w3-border systemButton">
           Добавить
       </button>
       <app-partner-modale *ngIf="isAddPartner" (newPartner)="newPartnerEvent($event)" (closeModal)="isAddPartner=false">

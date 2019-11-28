@@ -38,3 +38,20 @@ button, input {
   border-radius: 40px;
   border: 3px solid white;
 }
+
+.badValue {
+  border: 2px solid red;
+  color: red;
+}
+
+.badValue::-webkit-input-placeholder {
+  color: red;
+}
+
+.badValue::-moz-placeholder {
+  color: red;
+}
+
+.systemButton {
+  width: 200px;
+}
