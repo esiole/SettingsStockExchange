@@ -16,7 +16,7 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 app.post('/print', (req, res) => {
-  fs.writeFile('./result/config.json', JSON.stringify(req.body), (err) => { if (err) { console.log(err); } } );
+  fs.writeFile('./config.json', JSON.stringify(req.body), (err) => { if (err) { console.log(err); } } );
   res.json({msg: 'print'});
 });
 
