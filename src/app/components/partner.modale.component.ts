@@ -3,15 +3,7 @@ import {Partner} from '../classes/Partner';
 
 @Component({
   selector: 'app-partner-modale',
-  template: `
-      <div class="shadow">
-          <div class="modul"><p></p>
-              <input type="text" [placeholder]="placeholderName" [(ngModel)]="name" [class.badValue]="isBadName" (focus)="focusName()" (keydown.enter)="add(name, money)"><p></p>
-              <input type="number" min="0" step="1" [placeholder]="placeholderMoney" [(ngModel)]="money" [class.badValue]="isBadMoney" (focus)="focusMoney()" (keydown.enter)="add(name, money)"><p></p>
-              <button (click)="add(name, money)" class="w3-btn w3-indigo w3-hover-khaki w3-round-xxlarge w3-border">Добавить</button>
-              <button (click)="this.closeModal.emit()" class="w3-btn w3-indigo w3-hover-khaki w3-round-xxlarge w3-border w3-margin-left">Назад</button>
-          </div>
-      </div>`,
+  templateUrl: '../templates/partnerModale.html',
   styleUrls: ['../styles/partners.component.css'],
   providers: []
 })
@@ -19,6 +11,7 @@ import {Partner} from '../classes/Partner';
 export class PartnerModaleComponent {
   name: string;
   money: number;
+  okButton: string = 'Добавить';
   placeholderName: string = 'Имя';
   placeholderMoney: string = 'Сумма';
   isBadName: boolean = false;
