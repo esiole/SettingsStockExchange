@@ -8,6 +8,7 @@
   height: 21%;
 }
 
-button {
-  width: 80px;
+.minSize {
+  min-width: 300px;
+  min-height: 120px;
 }

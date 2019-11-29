@@ -13,13 +13,3 @@ td {
   min-width: 385px;
   min-height: 355px;
 }
-
-.modul>button {
-  width: 120px;
-  height: 50px;
-}
-
-.modul>input, .modul>select {
-  min-width: 300px;
-  min-height: 30px;
-}

@@ -14,8 +14,3 @@ table {
   width: 120px;
   height: 50px;
 }
-
-.modul>input {
-  min-width: 300px;
-  min-height: 30px;
-}
