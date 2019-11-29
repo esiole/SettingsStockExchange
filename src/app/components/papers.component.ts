@@ -35,7 +35,7 @@ import {Paper} from '../classes/Paper';
           Добавить
       </button>
       <app-paper-modale *ngIf="isAddPaper" (newPaper)="newPaperEvent($event)" (closeModal)="this.isAddPaper=false"></app-paper-modale>
-      <app-change-paper-modale *ngIf="isChangePaper" (closeModal)="isChangePaper=false" (changePaper)="changePaperEvent($event)">
+      <app-change-paper-modale *ngIf="isChangePaper" (closeModal)="isChangePaper=false" (newPaper)="changePaperEvent($event)" [name]="changeValue.name" [rule]="changeValue.rule" [max]="changeValue.max" [count]="changeValue.count" [startPrice]="changeValue.startPrice">
       </app-change-paper-modale>
       <app-is-delete *ngIf="isDelete" (okay)="this.paperService.deleteData(deleteValue); isDelete=false;" (back)="isDelete=false">
           эту акцию
@@ -53,6 +53,7 @@ export class PapersComponent implements OnInit {
   isInfo: boolean = false;
   deleteValue: string;
   papers: Paper[];
+  changeValue: Paper = new Paper('', '', 0, 0, 0);
   constructor(private paperService: PaperService) {}
   ngOnInit(): void {
     this.papers = this.paperService.getData();
@@ -73,6 +74,12 @@ export class PapersComponent implements OnInit {
     this.deleteValue = event.closest('tr').firstChild.innerHTML;
   }
   changePaper(event): void {
+    const tr = event.closest('tr');
+    this.changeValue.name = tr.children[0].innerHTML;
+    this.changeValue.rule = tr.children[1].innerHTML;
+    this.changeValue.max = tr.children[2].innerHTML;
+    this.changeValue.count = tr.children[3].innerHTML;
+    this.changeValue.startPrice = tr.children[4].innerHTML;
     this.isChangePaper = true;
     this.changePaperName = event.closest('tr').firstChild.innerHTML;
   }
