@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
+import {Paper} from '../classes/Paper';
 
 @Component({
   selector: 'app-paper-modale',
@@ -33,7 +34,7 @@ export class PaperModaleComponent {
   isBadMax: boolean = false;
   isBadCount: boolean = false;
   isBadPrice: boolean = false;
-  @Output() newPaper = new EventEmitter<object>();
+  @Output() newPaper = new EventEmitter<Paper>();
   @Output() closeModal = new EventEmitter();
   add(name: string, rule: string, max: number, count: number, startPrice: number): void {
     if (name === undefined || name === '' || isNaN(parseInt(name, 10)) === false) {
@@ -75,7 +76,7 @@ export class PaperModaleComponent {
       this.togglePlaceholderPrice();
       return;
     }
-    this.newPaper.emit({name, rule, max, count, startPrice});
+    this.newPaper.emit(new Paper(name, rule, max, count, startPrice));
   }
   focusName(): void {
     if (this.isBadName === false) {

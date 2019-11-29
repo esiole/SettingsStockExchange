@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
+import {Partner} from '../classes/Partner';
 
 @Component({
   selector: 'app-partner-modale',
@@ -20,7 +21,7 @@ export class PartnerModaleComponent {
   placeholderMoney: string = 'Сумма';
   isBadName: boolean = false;
   isBadMoney: boolean = false;
-  @Output() newPartner = new EventEmitter<object>();
+  @Output() newPartner = new EventEmitter<Partner>();
   @Output() closeModal = new EventEmitter();
   add(name: string, money: number): void {
     if (name === undefined || name === '' || isNaN(parseInt(name, 10)) === false) {
@@ -39,7 +40,7 @@ export class PartnerModaleComponent {
       this.togglePlaceholderMoney();
       return;
     }
-    this.newPartner.emit({name, money});
+    this.newPartner.emit(new Partner(name, money));
   }
   focusName(): void {
     if (this.isBadName === false ) {

@@ -59,14 +59,12 @@ export class PapersComponent implements OnInit {
     this.papers = this.paperService.getData();
   }
   add(): void { this.isAddPaper = true; }
-  newPaperEvent(value: object): void {
-    // @ts-ignore
+  newPaperEvent(value: Paper): void {
     if (this.paperService.find(value.name)) {
       this.isInfo = true;
       return;
     }
     this.isAddPaper = false;
-    // @ts-ignore
     this.paperService.addData(value.name, value.rule, value.max, value.count, value.startPrice);
   }
   deletePaper(event): void {
@@ -83,9 +81,8 @@ export class PapersComponent implements OnInit {
     this.isChangePaper = true;
     this.changePaperName = event.closest('tr').firstChild.innerHTML;
   }
-  changePaperEvent(value: object): void {
+  changePaperEvent(value: Paper): void {
     this.isChangePaper = false;
-    // @ts-ignore
     this.paperService.change(this.changePaperName, value.name, value.rule, value.max, value.count, value.startPrice);
   }
 }

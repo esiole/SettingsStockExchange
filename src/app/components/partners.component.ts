@@ -30,7 +30,7 @@ import {PartnerService} from '../services/partner.service';
       </button>
       <app-partner-modale *ngIf="isAddPartner" (newPartner)="newPartnerEvent($event)" (closeModal)="isAddPartner=false">
       </app-partner-modale>
-      <app-change-partner-modale *ngIf="isChangePartner" (newPartner)="changePartnerEvent($event)" (closeModal)="isChangePartner=false" [name]="nameChange" [money]="money"></app-change-partner-modale>
+      <app-change-partner-modale *ngIf="isChangePartner" (newPartner)="changePartnerEvent($event)" (closeModal)="isChangePartner=false" [name]="changeValue.name" [money]="changeValue.money"></app-change-partner-modale>
       <app-is-delete *ngIf="isDelete" (okay)="this.partnerService.deleteData(deleteValue); isDelete=false;" (back)="isDelete=false">
           этого участника
       </app-is-delete>
@@ -47,34 +47,31 @@ export class PartnersComponent implements OnInit {
   changePartnerName: string;
   isInfo: boolean = false;
   partners: Partner[];
+  changeValue: Partner = new Partner('', 0);
   constructor(private partnerService: PartnerService) {}
   ngOnInit(): void { this.partners = this.partnerService.getData(); }
   add(): void { this.isAddPartner = true; }
-  newPartnerEvent(value: object): void {
-    // @ts-ignore
+  newPartnerEvent(value: Partner): void {
     if (this.partnerService.find(value.name)) {
       this.isInfo = true;
       return;
     }
     this.isAddPartner = false;
-    // @ts-ignore
     this.partnerService.addData(value.name, value.money);
   }
   deletePartner(event): void {
     this.isDelete = true;
     this.deleteValue = event.closest('tr').firstChild.innerHTML;
   }
-  nameChange: string;
-  money: number;
   changePartner(event): void {
-    this.nameChange = event.closest('tr').children[0].innerHTML;
-    this.money = event.closest('tr').children[1].innerHTML;
+    const tr = event.closest('tr');
+    this.changeValue.name = tr.children[0].innerHTML;
+    this.changeValue.money = tr.children[1].innerHTML;
     this.isChangePartner = true;
     this.changePartnerName = event.closest('tr').firstChild.innerHTML;
   }
-  changePartnerEvent(value: object): void {
+  changePartnerEvent(value: Partner): void {
     this.isChangePartner = false;
-    // @ts-ignore
     this.partnerService.change(this.changePartnerName, value.name, value.money);
   }
 }
