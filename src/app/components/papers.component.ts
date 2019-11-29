@@ -34,8 +34,8 @@ import {Paper} from '../classes/Paper';
       <button (click)="add()" class="w3-btn w3-indigo w3-hover-khaki w3-margin-top w3-margin-right w3-xlarge w3-round-xxlarge w3-border systemButton">
           Добавить
       </button>
-      <app-paper-modale *ngIf="isAddPaper" (newPaper)="newPaperEvent($event)" (closeModal)="this.isAddPaper=false"></app-paper-modale>
-      <app-change-paper-modale *ngIf="isChangePaper" (closeModal)="isChangePaper=false" (newPaper)="changePaperEvent($event)" [name]="changeValue.name" [rule]="changeValue.rule" [max]="changeValue.max" [count]="changeValue.count" [startPrice]="changeValue.startPrice">
+      <app-paper-modale *ngIf="isAddPaper" (paper)="newPaperEvent($event)" (closeModal)="this.isAddPaper=false"></app-paper-modale>
+      <app-change-paper-modale *ngIf="isChangePaper" (closeModal)="isChangePaper=false" (paper)="changePaperEvent($event)" [name]="changeValue.name" [rule]="changeValue.rule" [max]="changeValue.max" [count]="changeValue.count" [startPrice]="changeValue.startPrice">
       </app-change-paper-modale>
       <app-is-delete *ngIf="isDelete" (okay)="this.paperService.deleteData(deleteValue); isDelete=false;" (back)="isDelete=false">
           эту акцию
@@ -55,9 +55,7 @@ export class PapersComponent implements OnInit {
   papers: Paper[];
   changeValue: Paper = new Paper('', '', 0, 0, 0);
   constructor(private paperService: PaperService) {}
-  ngOnInit(): void {
-    this.papers = this.paperService.getData();
-  }
+  ngOnInit(): void { this.papers = this.paperService.getData(); }
   add(): void { this.isAddPaper = true; }
   newPaperEvent(value: Paper): void {
     if (this.paperService.find(value.name)) {
@@ -79,7 +77,7 @@ export class PapersComponent implements OnInit {
     this.changeValue.count = tr.children[3].innerHTML;
     this.changeValue.startPrice = tr.children[4].innerHTML;
     this.isChangePaper = true;
-    this.changePaperName = event.closest('tr').firstChild.innerHTML;
+    this.changePaperName = tr.firstChild.innerHTML;
   }
   changePaperEvent(value: Paper): void {
     this.isChangePaper = false;

@@ -28,9 +28,9 @@ import {PartnerService} from '../services/partner.service';
       <button (click)="add()" class="w3-btn w3-indigo w3-hover-khaki w3-margin-top w3-margin-right w3-xlarge w3-round-xxlarge w3-border systemButton">
           Добавить
       </button>
-      <app-partner-modale *ngIf="isAddPartner" (newPartner)="newPartnerEvent($event)" (closeModal)="isAddPartner=false">
+      <app-partner-modale *ngIf="isAddPartner" (partner)="newPartnerEvent($event)" (closeModal)="isAddPartner=false">
       </app-partner-modale>
-      <app-change-partner-modale *ngIf="isChangePartner" (newPartner)="changePartnerEvent($event)" (closeModal)="isChangePartner=false" [name]="changeValue.name" [money]="changeValue.money"></app-change-partner-modale>
+      <app-change-partner-modale *ngIf="isChangePartner" (partner)="changePartnerEvent($event)" (closeModal)="isChangePartner=false" [name]="changeValue.name" [money]="changeValue.money"></app-change-partner-modale>
       <app-is-delete *ngIf="isDelete" (okay)="this.partnerService.deleteData(deleteValue); isDelete=false;" (back)="isDelete=false">
           этого участника
       </app-is-delete>
@@ -68,7 +68,7 @@ export class PartnersComponent implements OnInit {
     this.changeValue.name = tr.children[0].innerHTML;
     this.changeValue.money = tr.children[1].innerHTML;
     this.isChangePartner = true;
-    this.changePartnerName = event.closest('tr').firstChild.innerHTML;
+    this.changePartnerName = tr.firstChild.innerHTML;
   }
   changePartnerEvent(value: Partner): void {
     this.isChangePartner = false;

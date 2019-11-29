@@ -17,11 +17,13 @@ import {Partner} from '../classes/Partner';
 })
 
 export class PartnerModaleComponent {
+  name: string;
+  money: number;
   placeholderName: string = 'Имя';
   placeholderMoney: string = 'Сумма';
   isBadName: boolean = false;
   isBadMoney: boolean = false;
-  @Output() newPartner = new EventEmitter<Partner>();
+  @Output() partner = new EventEmitter<Partner>();
   @Output() closeModal = new EventEmitter();
   add(name: string, money: number): void {
     if (name === undefined || name === '' || isNaN(parseInt(name, 10)) === false) {
@@ -40,10 +42,10 @@ export class PartnerModaleComponent {
       this.togglePlaceholderMoney();
       return;
     }
-    this.newPartner.emit(new Partner(name, money));
+    this.partner.emit(new Partner(name, money));
   }
   focusName(): void {
-    if (this.isBadName === false ) {
+    if (this.isBadName === false) {
       return;
     } else {
       this.isBadName = false;
@@ -51,17 +53,13 @@ export class PartnerModaleComponent {
     }
   }
   focusMoney(): void {
-    if (this.isBadMoney === false ) {
+    if (this.isBadMoney === false) {
       return;
     } else {
       this.isBadMoney = false;
       this.togglePlaceholderMoney();
     }
   }
-  togglePlaceholderName(): void {
-    (this.placeholderName === 'Имя') ? this.placeholderName = 'Введите имя' : this.placeholderName = 'Имя';
-  }
-  togglePlaceholderMoney(): void {
-    (this.placeholderMoney === 'Сумма') ? this.placeholderMoney = 'Введите сумму' : this.placeholderMoney = 'Сумма';
-  }
+  togglePlaceholderName(): void { (this.placeholderName === 'Имя') ? this.placeholderName = 'Введите имя' : this.placeholderName = 'Имя'; }
+  togglePlaceholderMoney(): void { (this.placeholderMoney === 'Сумма') ? this.placeholderMoney = 'Введите сумму' : this.placeholderMoney = 'Сумма'; }
 }

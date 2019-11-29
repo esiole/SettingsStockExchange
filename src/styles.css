@@ -39,6 +39,16 @@ button, input, select {
   border: 3px solid white;
 }
 
+.modul>button {
+  width: 120px;
+  height: 50px;
+}
+
+.modul>input, .modul>select {
+  min-width: 300px;
+  min-height: 30px;
+}
+
 .badValue {
   border: 2px solid red;
   color: red;

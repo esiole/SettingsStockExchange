@@ -25,6 +25,11 @@ import {Paper} from '../classes/Paper';
 })
 
 export class PaperModaleComponent {
+  name: string;
+  rule: string;
+  max: number;
+  count: number;
+  startPrice: number;
   placeholderName: string = 'Фирма';
   placeholderMax: string = 'Макс. изменение цены';
   placeholderCount: string = 'Количество';
@@ -34,7 +39,7 @@ export class PaperModaleComponent {
   isBadMax: boolean = false;
   isBadCount: boolean = false;
   isBadPrice: boolean = false;
-  @Output() newPaper = new EventEmitter<Paper>();
+  @Output() paper = new EventEmitter<Paper>();
   @Output() closeModal = new EventEmitter();
   add(name: string, rule: string, max: number, count: number, startPrice: number): void {
     if (name === undefined || name === '' || isNaN(parseInt(name, 10)) === false) {
@@ -76,7 +81,7 @@ export class PaperModaleComponent {
       this.togglePlaceholderPrice();
       return;
     }
-    this.newPaper.emit(new Paper(name, rule, max, count, startPrice));
+    this.paper.emit(new Paper(name, rule, max, count, startPrice));
   }
   focusName(): void {
     if (this.isBadName === false) {
@@ -117,16 +122,8 @@ export class PaperModaleComponent {
       this.togglePlaceholderPrice();
     }
   }
-  togglePlaceholderName(): void {
-    (this.placeholderName === 'Фирма') ? this.placeholderName = 'Введите название фирмы' : this.placeholderName = 'Фирма';
-  }
-  togglePlaceholderMax(): void {
-    (this.placeholderMax === 'Макс. изменение цены') ? this.placeholderMax = 'Введите число' : this.placeholderMax = 'Макс. изменение цены';
-  }
-  togglePlaceholderCount(): void {
-    (this.placeholderCount === 'Количество') ? this.placeholderCount = 'Введите число' : this.placeholderCount = 'Количество';
-  }
-  togglePlaceholderPrice(): void {
-    (this.placeholderPrice === 'Стартовая цена') ? this.placeholderPrice = 'Введите число' : this.placeholderPrice = 'Стартовая цена';
-  }
+  togglePlaceholderName(): void { (this.placeholderName === 'Фирма') ? this.placeholderName = 'Введите название фирмы' : this.placeholderName = 'Фирма'; }
+  togglePlaceholderMax(): void { (this.placeholderMax === 'Макс. изменение цены') ? this.placeholderMax = 'Введите число' : this.placeholderMax = 'Макс. изменение цены'; }
+  togglePlaceholderCount(): void { (this.placeholderCount === 'Количество') ? this.placeholderCount = 'Введите число' : this.placeholderCount = 'Количество'; }
+  togglePlaceholderPrice(): void { (this.placeholderPrice === 'Стартовая цена') ? this.placeholderPrice = 'Введите число' : this.placeholderPrice = 'Стартовая цена'; }
 }
