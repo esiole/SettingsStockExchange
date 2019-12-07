@@ -11,3 +11,7 @@
 
 `ng serve` - запуск приложения на `http://localhost:4200`.<br />
 `node server/app.js` - запуск сервера для записи результата в json-файл.
+
+## Результат
+
+![](https://github.com/esiole/SettingsStockExchange/raw/master/src/app/images/result1.png)
