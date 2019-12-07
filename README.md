@@ -15,3 +15,7 @@
 ## Результат
 
 ![](https://github.com/esiole/SettingsStockExchange/raw/master/src/app/images/result1.png)
+![](https://github.com/esiole/SettingsStockExchange/raw/master/src/app/images/result2.png)
+![](https://github.com/esiole/SettingsStockExchange/raw/master/src/app/images/result3.png)
+![](https://github.com/esiole/SettingsStockExchange/raw/master/src/app/images/result4.png)
+![](https://github.com/esiole/SettingsStockExchange/raw/master/src/app/images/result5.png)
